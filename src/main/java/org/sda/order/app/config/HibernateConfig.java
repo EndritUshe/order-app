@@ -1,4 +1,4 @@
-package config;
+package org.sda.order.app.config;
 
 import org.hibernate.cfg.Configuration;
 

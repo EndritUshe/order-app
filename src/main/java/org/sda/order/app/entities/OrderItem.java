@@ -1,4 +1,4 @@
-package entities;
+package org.sda.order.app.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
