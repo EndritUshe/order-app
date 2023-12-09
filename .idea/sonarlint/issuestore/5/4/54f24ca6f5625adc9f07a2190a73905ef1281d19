@@ -1,0 +1,33 @@
+
+o
+java:S3008"RRename this field "FACTORY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÜü8‘àúÿÂ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ÒŞôúÿÿÿÿ8çÿáŠÃ1
+[
+java:S2168"9Remove this dangerous instance of double-checked locking.(éê²Šÿÿÿÿÿ8×œ¼€Ã1
+d
+java:S3252"BUse static access with "org.hibernate.cfg.JdbcSettings" for "URL".(Ë»ëüÿÿÿÿ8ÀŒ¾€Ã1
+M
+java:S1874"+Remove this use of "URL"; it is deprecated.(Ë»ëüÿÿÿÿ8ÊŒ¾€Ã1
+q
+java:S3252"TUse static access with "org.hibernate.cfg.SchemaToolingSettings" for "HBM2DDL_AUTO".(âô²±8ÏŒ¾€Ã1
+i
+java:S3252"GUse static access with "org.hibernate.cfg.JdbcSettings" for "SHOW_SQL".(©š—Øşÿÿÿÿ8ÑŒ¾€Ã1
+k
+java:S3252"IUse static access with "org.hibernate.cfg.JdbcSettings" for "FORMAT_SQL".(‰›÷¿ûÿÿÿÿ8ÒŒ¾€Ã1
+e
+java:S3252"CUse static access with "org.hibernate.cfg.JdbcSettings" for "USER".(ùÊéÿøÿÿÿÿ8ÔŒ¾€Ã1
+N
+java:S1874",Remove this use of "USER"; it is deprecated.(ùÊéÿøÿÿÿÿ8ÕŒ¾€Ã1
+`
+java:S3252"CUse static access with "org.hibernate.cfg.JdbcSettings" for "PASS".(ñ˜Ñ£8ÖŒ¾€Ã1
+I
+java:S1874",Remove this use of "PASS"; it is deprecated.(ñ˜Ñ£8×Œ¾€Ã1
+c
+java:S3252 "FUse static access with "org.hibernate.cfg.JdbcSettings" for "DIALECT".(ÂÉ±Æ8ØŒ¾€Ã1
+b
+java:S3252!"EUse static access with "org.hibernate.cfg.JdbcSettings" for "DRIVER".(±ì‹8ÙŒ¾€Ã1
+K
+java:S1874!".Remove this use of "DRIVER"; it is deprecated.(±ì‹8ÚŒ¾€Ã1
+~
+java:S3252""aUse static access with "org.hibernate.cfg.AvailableSettings" for "CURRENT_SESSION_CONTEXT_CLASS".(Ğ˜ÙÁ8ÛŒ¾€Ã1
