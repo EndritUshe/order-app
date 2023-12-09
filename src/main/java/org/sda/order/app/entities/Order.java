@@ -8,16 +8,11 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "orders")
-public class Orders extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int orderId;
+@Table(name = "oa_order")
+public class Order extends BaseEntity {
     @Column(name = "date_created")
     private Date dateCreated;
-    @Column(name="totals")
-    private float totals;
 
-
-
+    @Column(name="total")
+    private float total;
 }

@@ -1,22 +1,21 @@
 package org.sda.order.app;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.sda.order.app.config.HibernateConfiguration;
-import org.sda.order.app.entities.Products;
 import org.sda.order.app.repository.ProductsRepository;
+import org.sda.order.app.services.ProductService;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ProductsRepository productsRepository = new ProductsRepository();
-//        productsRepository.insertMenu();
+        ProductsRepository productsRepository = new ProductsRepository(HibernateConfiguration.getSessionFactory());
+        ProductService productService = new ProductService(productsRepository);
 
-      productsRepository.printMenu();
+        productService.createMenu();
+        productService.printMenu();
 
-        int orderNumber;
+
+        /*int orderNumber;
         String somethingElse = "yes";
         Scanner scanner = new Scanner(System.in);
         System.out.println("What would you like to oder?");
@@ -31,7 +30,7 @@ public class Main {
             System.out.println("What would you like to oder?");
             orderNumber = scanner.nextInt();
             System.out.println("You have ordered: " + productsRepository.findProductById(orderNumber));
-        }
+        }*/
 //        do{
 //            System.out.println("What would you like to oder?");
 //            orderNumber = scanner.nextInt();

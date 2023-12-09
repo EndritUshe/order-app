@@ -6,8 +6,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 import org.sda.order.app.entities.OrderItem;
-import org.sda.order.app.entities.Orders;
-import org.sda.order.app.entities.Products;
+import org.sda.order.app.entities.Order;
+import org.sda.order.app.entities.Product;
 
 import java.util.Properties;
 
@@ -38,8 +38,8 @@ public class HibernateConfiguration {
                     config.addPackage("entities");
 
                     config.addAnnotatedClass(OrderItem.class);
-                    config.addAnnotatedClass(Orders.class);
-                    config.addAnnotatedClass(Products.class);
+                    config.addAnnotatedClass(Order.class);
+                    config.addAnnotatedClass(Product.class);
 
 
                     ServiceRegistry serviceRegistry =  new StandardServiceRegistryBuilder()

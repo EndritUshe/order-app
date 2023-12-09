@@ -7,11 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "order_items")
+@Table(name = "order_item")
 public class OrderItem extends BaseEntity {
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
-    private Orders orders;
+
     @Column(name = "product_name")
     private String productName;
     @Column(name = "product_id")
@@ -20,4 +18,11 @@ public class OrderItem extends BaseEntity {
     private float productPrice;
     @Column(name = "quantity")
     private int quantity;
+
+    @Column(name = "order_id")
+    private Long orderId;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", insertable = false, updatable = false)
+    private Order order;
 }

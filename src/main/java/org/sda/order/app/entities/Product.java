@@ -9,8 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "products")
-public class Products extends BaseEntity{
+@Table(name = "oa_product")
+public class Product extends BaseEntity{
     @Column(name="name")
     private String name;
     @Column(name="price")

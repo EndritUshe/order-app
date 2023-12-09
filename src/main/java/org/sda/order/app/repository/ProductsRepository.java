@@ -3,55 +3,68 @@ package org.sda.order.app.repository;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.sda.order.app.config.HibernateConfiguration;
-import org.sda.order.app.entities.Products;
+import org.sda.order.app.entities.Product;
 
 import java.util.List;
 
 public class ProductsRepository {
-    public void insertMenu() {
 
-        try (SessionFactory sessionFactory = HibernateConfiguration.getSessionFactory()) {
-            for (int i = 1; i < 11; i++) {
-                Session session = sessionFactory.getCurrentSession();
-                session.beginTransaction();
-                Products products = new Products();
-                products.setName("Pilafi: " + i);
-                products.setDescription("ingredients for pilafi: " + i);
-                products.setPrice(150.0f);
+    private SessionFactory sessionFactory;
 
-                session.persist(products);
-                session.getTransaction().commit();
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public ProductsRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
-    public void printMenu() {
-        List<Products> menu = menuList();
-        System.out.println(String.format("%s %s %s %s", "Id,", "Name,    ", "Price,      ", "Description "));
-        for (Products product : menu) {
-            System.out.println(String.format("%1d, %s, %f, %s", product.getId(), product.getName(), product.getPrice(), product.getDescription()));
-        }
-        System.out.println();
-    }
-
-    public List<Products> menuList() {
-        SessionFactory sessionFactory = HibernateConfiguration.getSessionFactory();
+    public List<Product> getProducts() {
         Session session = sessionFactory.openSession();
-        TypedQuery<Products> listOfProducts = session.createQuery("Select p from Products p", Products.class);
-        List<Products> lista = listOfProducts.getResultList();
+        TypedQuery<Product> listOfProducts = session.createQuery("Select p from Product p", Product.class);
+        List<Product> lista = listOfProducts.getResultList();
         session.close();
         return lista;
     }
 
-    public Products findProductById(Integer id) {
-        SessionFactory sessionFactory = HibernateConfiguration.getSessionFactory();
+    public Product findProductById(Integer id) {
         Session session = sessionFactory.openSession();
-        return session.createQuery("Select p from Products p where p.id = ?1", Products.class).setParameter(1, id)
+        return session.createQuery("Select p from Product p where p.id = ?1", Product.class).setParameter(1, id)
                 .getSingleResult();
 
+    }
+
+    public void save(Product product) {
+        Transaction tx = null;
+        try {
+            Session session = sessionFactory.isOpen() ? sessionFactory.getCurrentSession() : sessionFactory.openSession();
+            tx = session.beginTransaction();
+            session.persist(product);
+            tx.commit();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            if  (tx != null) {
+                tx.rollback();
+            }
+        }
+    }
+
+    public Product findProductByName(String productName) {
+        Transaction tx = null;
+
+        try  {
+            Session session = sessionFactory.openSession();
+            List<Product> result = session.createQuery(" from Product p where p.name = :name ", Product.class)
+                    .setParameter("name", productName)
+                    .getResultList();
+
+            return !result.isEmpty() ? result.get(0) : null;
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            if  (tx != null) {
+                tx.rollback();
+            }
+        }
+        return null;
     }
 }
