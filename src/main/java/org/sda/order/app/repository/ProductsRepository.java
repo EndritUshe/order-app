@@ -14,22 +14,23 @@ public class ProductsRepository {
     private SessionFactory sessionFactory;
 
     public ProductsRepository(SessionFactory sessionFactory) {
+
         this.sessionFactory = sessionFactory;
     }
 
     public List<Product> getProducts() {
         Session session = sessionFactory.openSession();
         TypedQuery<Product> listOfProducts = session.createQuery("Select p from Product p", Product.class);
-        List<Product> lista = listOfProducts.getResultList();
+        List<Product> productList = listOfProducts.getResultList();
         session.close();
-        return lista;
+        return productList;
     }
 
     public Product findProductById(Integer id) {
         Session session = sessionFactory.openSession();
-        return session.createQuery("Select p from Product p where p.id = ?1", Product.class).setParameter(1, id)
-                .getSingleResult();
-
+        List<Product> result = session.createQuery("Select p from Product p where p.id = ?1", Product.class).setParameter(1, id)
+                .getResultList();
+        return !result.isEmpty() ? result.get(0) : null ;
     }
 
     public void save(Product product) {

@@ -11,6 +11,7 @@ import java.util.List;
 public class ProductService {
     private ProductsRepository productsRepository;
     public ProductService(ProductsRepository productsRepository) {
+
         this.productsRepository = productsRepository;
     }
 
@@ -18,7 +19,7 @@ public class ProductService {
         // 1. Get product list
         List<Product> menu = this.productsRepository.getProducts();
         // 2. Iterate products and print in console
-        System.out.println(String.format("%s %s %s %s", "Id,", "Name,    ", "Price,      ", "Description "));
+        System.out.println(String.format("%s %s %s %s", "Id:", "Name:        ", "    Price:        ", "Description: "));
         for (Product product : menu) {
             System.out.println(String.format("%1d, %s, %f, %s", product.getId(), product.getName(), product.getPrice(), product.getDescription()));
         }
@@ -53,5 +54,14 @@ public class ProductService {
             thirdProduct.setPrice(450.0f);
             productsRepository.save(thirdProduct);
         }
+        Product fourthProduct = productsRepository.findProductByName("Supe peshku");
+        if (fourthProduct == null) {
+            fourthProduct = new Product();
+            fourthProduct.setName("Supe peshku");
+            fourthProduct.setDescription("Pizza me proshute, salce, dhe brum");
+            fourthProduct.setPrice(450.0f);
+            productsRepository.save(fourthProduct);
+        }
+
     }
 }

@@ -2,6 +2,7 @@ package org.sda.order.app;
 
 import org.sda.order.app.config.HibernateConfiguration;
 import org.sda.order.app.repository.ProductsRepository;
+import org.sda.order.app.services.OrderService;
 import org.sda.order.app.services.ProductService;
 
 import java.util.Scanner;
@@ -10,9 +11,13 @@ public class Main {
     public static void main(String[] args) {
         ProductsRepository productsRepository = new ProductsRepository(HibernateConfiguration.getSessionFactory());
         ProductService productService = new ProductService(productsRepository);
+        OrderService orderService = new OrderService(productsRepository);
 
         productService.createMenu();
         productService.printMenu();
+        orderService.showOrderMenu();
+
+
 
 
         /*int orderNumber;
