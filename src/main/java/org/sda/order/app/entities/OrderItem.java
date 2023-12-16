@@ -13,7 +13,7 @@ public class OrderItem extends BaseEntity {
     @Column(name = "product_name")
     private String productName;
     @Column(name = "product_id")
-    private int productId;
+    private Long productId;
     @Column(name = "product_price")
     private float productPrice;
     @Column(name = "quantity")

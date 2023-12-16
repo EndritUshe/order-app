@@ -1,18 +1,36 @@
 
-L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ˆïØøÄ1
-L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ˆïØøÄ1
-L	java:S106"+Replace this use of System.out by a logger.(ëü·ôüÿÿÿÿ8ˆïØøÄ1
-G	java:S106"+Replace this use of System.out by a logger.(¯Œ¨£8‰ïØøÄ1
-L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8‰ïØøÄ1
-G	java:S106"+Replace this use of System.out by a logger.(ïš„8ŠïØøÄ1
-L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ŠïØøÄ1
-G	java:S106"+Replace this use of System.out by a logger.(Õèü8ŠïØøÄ1
-G	java:S106!"+Replace this use of System.out by a logger.(Ö¨µ8ŒïØøÄ1
-G	java:S106#"+Replace this use of System.out by a logger.(«Ï‰€8ïØøÄ1
-L	java:S106'"+Replace this use of System.out by a logger.(¬ÖÉÇşÿÿÿÿ8¯ûÙøÄ1
-L	java:S106/"+Replace this use of System.out by a logger.(»»Øµşÿÿÿÿ8±ûÙøÄ1
-J	java:S1084")Either remove or fill this block of code.(ª®¤òÿÿÿÿÿ8¤óøÄ1
-L	java:S1067"+Replace this use of System.out by a logger.(÷ÏÇùÿÿÿÿ8…¤óøÄ1
-S
-java:S1068
-"6Remove this unused "productsRepository" private field.(³éÛÈ8‘ïØøÄ1
+g	java:S112q"FDefine and throw a dedicated exception instead of using a generic one.(ï©íøÿÿÿÿ8¯ßù¡Å1
+O
+java:S1199T"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8¶ßù¡Å1
+a
+java:S2259W"EA "NullPointerException" could be thrown; "dbOrder" is nullable here.(«ÃÅ28Ôèù¡Å1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(å–Ññøÿÿÿÿ8Ùèù¡Å1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ßèù¡Å1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8àèù¡Å1
+L	java:S106"+Replace this use of System.out by a logger.(ëü·ôüÿÿÿÿ8âèù¡Å1
+G	java:S106""+Replace this use of System.out by a logger.(¯Œ¨£8ãèù¡Å1
+L	java:S106#"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ãèù¡Å1
+G	java:S106$"+Replace this use of System.out by a logger.(ïš„8äèù¡Å1
+L	java:S106%"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8äèù¡Å1
+G	java:S106&"+Replace this use of System.out by a logger.(Õèü8äèù¡Å1
+G	java:S106-"+Replace this use of System.out by a logger.(Ö¨µ8æèù¡Å1
+G	java:S106/"+Replace this use of System.out by a logger.(«Ï‰€8èèù¡Å1
+L	java:S1063"+Replace this use of System.out by a logger.(¬ÖÉÇşÿÿÿÿ8éèù¡Å1
+L	java:S106;"+Replace this use of System.out by a logger.(»»Øµşÿÿÿÿ8êèù¡Å1
+L	java:S106<"+Replace this use of System.out by a logger.(«û²ûÿÿÿÿ8êèù¡Å1
+F	java:S106C"+Replace this use of System.out by a logger.(¯¾‡p8ëèù¡Å1
+L	java:S106G"+Replace this use of System.out by a logger.(»±äÿúÿÿÿÿ8ìèù¡Å1
+L	java:S106K"+Replace this use of System.out by a logger.(¬ôş…ÿÿÿÿÿ8íèù¡Å1
+L	java:S106R"+Replace this use of System.out by a logger.(ÜµÄüÿÿÿÿ8îèù¡Å1
+G	java:S106V"+Replace this use of System.out by a logger.(Éæ·8ïèù¡Å1
+F	java:S106W"+Replace this use of System.out by a logger.(«ÃÅ28ïèù¡Å1
+G	java:S106X"+Replace this use of System.out by a logger.(µõÉ«8ğèù¡Å1
+N
+java:S1602Y",Remove useless curly braces around statement(Ø ãßûÿÿÿÿ8ñèù¡Å1
+L	java:S106Z"+Replace this use of System.out by a logger.(ØÅ†Ëøÿÿÿÿ8ôèù¡Å1
+G	java:S106\"+Replace this use of System.out by a logger.(£ä¶8õèù¡Å1
+G	java:S106]"+Replace this use of System.out by a logger.(ê¶Èæ8õèù¡Å1
+L	java:S106a"+Replace this use of System.out by a logger.(÷ÏÇùÿÿÿÿ8öèù¡Å1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8şèù¡Å1

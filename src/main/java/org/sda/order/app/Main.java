@@ -1,6 +1,8 @@
 package org.sda.order.app;
 
 import org.sda.order.app.config.HibernateConfiguration;
+import org.sda.order.app.repository.OrderItemRepository;
+import org.sda.order.app.repository.OrderRepository;
 import org.sda.order.app.repository.ProductsRepository;
 import org.sda.order.app.services.OrderService;
 import org.sda.order.app.services.ProductService;
@@ -11,7 +13,9 @@ public class Main {
     public static void main(String[] args) {
         ProductsRepository productsRepository = new ProductsRepository(HibernateConfiguration.getSessionFactory());
         ProductService productService = new ProductService(productsRepository);
-        OrderService orderService = new OrderService(productsRepository);
+        OrderRepository orderRepository = new OrderRepository(HibernateConfiguration.getSessionFactory());
+        OrderItemRepository orderItemRepository = new OrderItemRepository(HibernateConfiguration.getSessionFactory());
+        OrderService orderService = new OrderService(productsRepository, orderRepository, orderItemRepository);
 
         productService.createMenu();
         productService.printMenu();

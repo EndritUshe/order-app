@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.sda.order.app.config.HibernateConfiguration;
+import org.sda.order.app.entities.OrderItem;
 import org.sda.order.app.entities.Product;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class ProductsRepository {
         return productList;
     }
 
-    public Product findProductById(Integer id) {
+    public Product findProductById(Long id) {
         Session session = sessionFactory.openSession();
         List<Product> result = session.createQuery("Select p from Product p where p.id = ?1", Product.class).setParameter(1, id)
                 .getResultList();
@@ -68,4 +69,12 @@ public class ProductsRepository {
         }
         return null;
     }
+
+    public void createOrderedItem(Long id){
+        OrderItem orderItem = new OrderItem();
+
+
+    }
+
+
 }
